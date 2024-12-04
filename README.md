@@ -43,7 +43,7 @@ I upgraded my RAM from 8GB to 12GB
 | Speakers and Headphones | ✅ |
 | Built-in Microphone | ✅  |
 | Webcam | ✅ |
-| Wi-Fi/Bluetooth | Bluetooth unstable |
+| Wi-Fi/Bluetooth | ✅ |
 | Airdrop/Handoff | ❌  |
 </details>
 
@@ -60,7 +60,7 @@ I upgraded my RAM from 8GB to 12GB
 You will need to spoof the Intel HD 620 device-id  
 ![Screenshot 2024-12-02 at 8 26 23 PM](https://github.com/user-attachments/assets/17873ed0-5e1a-47f9-b1b9-7dc501bd9e2c)  
 
-
+Fixed bluetooth by Enabling HashServices in config.plist and ensure Airportltwm is latest version.
 Audio Layout is 15, ALC256   
 SMBios is MacBookPro14,1
 
