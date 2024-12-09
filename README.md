@@ -1,7 +1,5 @@
-# EFI-DELL-Vostro-5468-Hackintosh
+# EFI-DELL-Vostro-5468-Hackintosh Sonoma+
 Full EFI for Dell Vostro 5468   
-Special thanks to https://github.com/MumetNgoding for providing guidance for iGPU Patching.
-
 
 ![Screenshot 2024-12-02 at 8 09 42 PM](https://github.com/user-attachments/assets/8f6785cc-0c76-4613-8886-af329901c22e)
 
@@ -48,8 +46,10 @@ I upgraded my RAM from 8GB to 12GB
 </details>
 
 **Kexts**   
-![image](https://github.com/user-attachments/assets/bd75f1fd-c680-4226-aca5-fdc7ac5881a1)
+![image](https://github.com/user-attachments/assets/52c8f69f-6e47-4513-97be-986136ba1d3a)
+
 - Map your own ports using UTBMap tool on Windows
+- Airportltwm is not supported in Sonoma or later. Use ltwm+heliport.
 
 **ACPI**   
 ![image](https://github.com/user-attachments/assets/649372f9-904e-41e1-bbab-cde93918aafe)
@@ -60,12 +60,21 @@ I upgraded my RAM from 8GB to 12GB
 You will need to spoof the Intel HD 620 device-id  
 ![Screenshot 2024-12-02 at 8 26 23 PM](https://github.com/user-attachments/assets/17873ed0-5e1a-47f9-b1b9-7dc501bd9e2c)  
 
-Fixed bluetooth by Enabling HashServices in config.plist and ensure Airportltwm is latest version.
-Audio Layout is 15, ALC256   
-SMBios is MacBookPro14,1
+***Additional Information***
+In ``Booter -> Quirks``:   
+  Enable ``AllowRelocationBlock``, ``SyncRuntimePermissions`` and ``EnableWriteUnprotector`` otherwise boot will fail   
+Fixed bluetooth by Enabling HashServices  
+Audio Layout is 21, ALC256    
+SMBios is MacBookPro16,2 
+
+**Updating from Ventura to Sonoma or later?**
+Ensure you enable the quirks i've mentioned first, then disable SecureBootModel in config.plist by changing it to ``Disabled``   
+Clear your NVRAM using ResetNVRAMEntry.efi   
+Boot to your macOS and re-run the Sonoma or later installer   
+Your mac will restart and boot to the installer, there should be about 2-3 reboots, always boot to the macOS installer until it vanish.   
+Enable SecureBootModel after update.
 
 I'll slowly update this guide to include more details, for now, this will help many people.   
 If you need any requests or help, please open an issue in this repo.    
-  
-**Do not use pre-built EFIs, pre-built DMGs, or someone's ACPI or EFI files, It'll not go well**
+
 
